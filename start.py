@@ -5,7 +5,7 @@ import PySimpleGUI as sg
 
 #sg.Window(title="Hello World", layout=[[]], margins=(60, 50)).read()
 font = ("Arial", 16)
-layout = [[sg.Text('New project name', font=font, background_color='Red'), sg.Input()],
+layout = [[sg.Text('New project name', font=font, background_color='Red'), sg.Input(key='-pro-')],
           [sg.Text('Run on Windows', font=font, background_color='Red'), sg.Button('Windows', font=font)],
           [sg.Text('Run on Mac', font=font, background_color='Red'), sg.Button('Mac', font=font)],
           [sg.Text('Run on Linux', font=font, background_color='Red'), sg.Button('Linux', font=font)], 
@@ -121,7 +121,7 @@ def Mac():
         path = os.getcwd()
         print ("The current working directory is %s" % path)
 
-        mypro = sg.Input()    #input("New Project Name:")
+        mypro = values['-pro-']   #input("New Project Name:")
         path = "/users/jack/python_projects/"
         file = "README.md"
 
