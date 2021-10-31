@@ -23,6 +23,12 @@ while True:
     # presses the OK button
     if event == "Ok" or event == sg.WIN_CLOSED:
         break
+    if event == 'Windows':
+        ('Windows')
+    if event == 'Mac':
+        ('Mac')
+    if event == 'Linux':
+        ('Linux')
 
 window.close()
 
@@ -115,7 +121,7 @@ def Mac():
         path = os.getcwd()
         print ("The current working directory is %s" % path)
 
-        mypro = input("New Project Name:")
+        mypro = sg.Input()    #input("New Project Name:")
         path = "/users/jack/python_projects/"
         file = "README.md"
 
