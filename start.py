@@ -1,6 +1,30 @@
 import os
 import sys
 import subprocess as sp
+import PySimpleGUI as sg
+
+#sg.Window(title="Hello World", layout=[[]], margins=(60, 50)).read()
+font = ("Arial", 16)
+layout = [[sg.Text('New project name', font=font, background_color='Red'), sg.Input()],
+          [sg.Text('Run on Windows', font=font, background_color='Red'), sg.Button('Windows', font=font)],
+          [sg.Text('Run on Mac', font=font, background_color='Red'), sg.Button('Mac', font=font)],
+          [sg.Text('Run on Linux', font=font, background_color='Red'), sg.Button('Linux', font=font)], 
+          #I want to change the background color of the box.
+          #[sg.Color('green')],
+          
+
+
+]
+window = sg.Window('Make App', layout,  background_color='red', margins=(60, 40)).read(),
+# Create an event loop
+while True:
+    event, values = window.read()
+    # End program if user closes window or
+    # presses the OK button
+    if event == "Ok" or event == sg.WIN_CLOSED:
+        break
+
+window.close()
 
 
 
