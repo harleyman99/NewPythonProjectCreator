@@ -8,14 +8,11 @@ font = ("Arial", 16)
 layout = [[sg.Text('New project name', font=font, background_color='Red'), sg.Input(key='-pro-')],
           [sg.Text('Run on Windows', font=font, background_color='Red'), sg.Button('Windows', font=font)],
           [sg.Text('Run on Mac', font=font, background_color='Red'), sg.Button('Mac', font=font)],
-          [sg.Text('Run on Linux', font=font, background_color='Red'), sg.Button('Linux', font=font)], 
+          [sg.Text('Run on Linux', font=font, background_color='Red'), sg.Button('Linux', font=font)] 
           #I want to change the background color of the box.
-          #[sg.Color('green')],
-          
-
-
-]
-window = sg.Window('Make App', layout,  background_color='red', margins=(60, 40)).read(),
+          #[sg.Color('green')]
+          ]
+window = sg.Window('Make App', layout,  background_color='red', margins=(60, 40))#.read()
 # Create an event loop
 while True:
     event, values = window.read()
@@ -29,6 +26,8 @@ while True:
         ('Mac')
     if event == 'Linux':
         ('Linux')
+
+        windows = sg.Window('-pro-', layout)
 
 window.close()
 
