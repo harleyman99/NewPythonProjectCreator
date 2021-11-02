@@ -65,30 +65,31 @@ elif event == 'Windows':
 
             f= open(file,"w+")
 
-else: event == 'Linux'
-linproject = values['combo']
-path = os.getcwd()
-            
-           #print ("The current working directory is %s" % path)
+elif event == 'Linux':
+         linproject = values['combo']
+         path = os.getcwd()
+                    
+                #print ("The current working directory is %s" % path)
 
-mypro = linproject
-path = "/home/okorn/Programming/"
-file = "README.md"
+         mypro = linproject
+         path = "/home/okorn/Programming/"
+         file = "README.md"
 
-check_folder = os.path.isdir(path)
+         check_folder = os.path.isdir(path)
 
-    #if not check_folder:
+            #if not check_folder:
 
-try:
-    os.makedirs(os.path.join(path, mypro))
-# os.makedirs(os.path.join(path, mypro))
-except OSError:
-    print ("Creation of the directory %s failed" % path)
-else:
-    print ("Successfully created the directory %s " % path)
+         try:
+            os.makedirs(os.path.join(path, mypro))
+        # os.makedirs(os.path.join(path, mypro))
+         except OSError:
+            print ("Creation of the directory %s failed" % path)
+         else:
+            print ("Successfully created the directory %s " % path)
+            window.Close()
 
-    os.chdir(os.path.join(path, mypro))
+            os.chdir(os.path.join(path, mypro))
 
-    f= open(file,"w+")
-    window.Close()
-window.Close()
+            f= open(file,"w+")
+            window.Close()
+else:window.Close()
