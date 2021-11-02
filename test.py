@@ -65,6 +65,33 @@ elif event == 'Windows':
 
             f= open(file,"w+")
 
+else: event == 'Linux'
+
+        linuxproject = values['combo']
+        path = os.getcwd()
+            
+        print ("The current working directory is %s" % path)
+
+        mypro = linuxproject
+        path = "/home/jack/Programming/"
+        file = "README.md"
+
+        check_folder = os.path.isdir(path)
+
+                #if not check_folder:
+
+        try:
+                os.makedirs(os.path.join(path, mypro))
+        # os.makedirs(os.path.join(path, mypro))
+        except OSError:
+                print ("Creation of the directory %s failed" % path)
+        else:
+                print ("Successfully created the directory %s " % path)
+
+                os.chdir(os.path.join(path, mypro))
+
+                f= open(file,"w+")
+
 """         else event == 'Linux'
         linuxproject = values['combo']
         path = os.getcwd()
