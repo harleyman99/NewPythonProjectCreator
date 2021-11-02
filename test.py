@@ -5,7 +5,7 @@ import subprocess as sp
 font = ("Arial", 16)
 newfont = ("Arial", 14)
 layout = [[sg.Input(font=font, enable_events=True, key='combo')],
-          [sg.Button('Mac', font=font), sg.Button('Windows', font=font), sg.Button('Linux', font=font), sg.Exit()]
+          [sg.Button('Mac', font=font), sg.Button('Windows', font=font), sg.Button('Linux', font=font), sg.Exit(font=font)]
           ]
 
 window = sg.Window('New Application Creator', layout, margins=(60, 40))
