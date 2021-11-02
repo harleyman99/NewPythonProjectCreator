@@ -65,7 +65,7 @@ elif event == 'Windows':
 
             f= open(file,"w+")
 
-        else event == 'Linux'
+"""         else event == 'Linux'
         linuxproject = values['combo']
         path = os.getcwd()
             
@@ -90,5 +90,5 @@ elif event == 'Windows':
                 os.chdir(os.path.join(path, mypro))
 
                 f= open(file,"w+")
-
+ """
 window.Close()
