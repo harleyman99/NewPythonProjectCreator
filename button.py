@@ -14,7 +14,13 @@ while True:
     if event is None or event == 'Exit':
         break
 
-if event == 'Mac':
-    print('You pushed button Mac')
+    if event == 'Mac':
+     print('You pushed button Mac')
+
+    elif event == 'Windows':
+     print('You pushed the Windows button')
+
+    elif event == 'Linux':
+     print('You pushed the Linux button')
 
     window.Close()
