@@ -4,11 +4,11 @@ import sys
 import subprocess as sp
 font = ("Arial", 16)
 newfont = ("Arial", 14)
-layout = [[sg.Input(font=font, enable_events=True, key='combo')],
-          [sg.Button('Mac', font=font), sg.Button('Windows', font=font), sg.Button('Linux', font=font), sg.Exit()]
+layout = [[sg.Text('New Project Name: '),sg.Input(font=font, enable_events=True, key='combo')],
+          [sg.Button('Mac', font=font), sg.Button('Windows', font=font), sg.Button('Linux', font=font), sg.Exit(font=font)]
           ]
 
-window = sg.Window('New Application Creator', layout, margins=(60, 40))
+window = sg.Window('New Application Creator', layout, margins=(40, 20))
 
 while True:
     event, values = window.Read()
@@ -65,6 +65,7 @@ elif event == 'Windows':
 
             f= open(file,"w+")
 
+<<<<<<< HEAD
 else: event == 'Linux'
 
         linuxproject = values['combo']
@@ -97,25 +98,33 @@ else: event == 'Linux'
         path = os.getcwd()
             
         print ("The current working directory is %s" % path)
+=======
+elif event == 'Linux':
+         linproject = values['combo']
+         path = os.getcwd()
+                    
+                #print ("The current working directory is %s" % path)
+>>>>>>> 51c423d2393934ae0b9b5214268d3f05398f687f
 
-        mypro = linuxproject
-        path = "/home/jack/Programming/"
-        file = "README.md"
+         mypro = linproject
+         path = "/home/okorn/Programming/"
+         file = "README.md"
 
-        check_folder = os.path.isdir(path)
+         check_folder = os.path.isdir(path)
 
-                #if not check_folder:
+            #if not check_folder:
 
-        try:
-                os.makedirs(os.path.join(path, mypro))
+         try:
+            os.makedirs(os.path.join(path, mypro))
         # os.makedirs(os.path.join(path, mypro))
-        except OSError:
-                print ("Creation of the directory %s failed" % path)
-        else:
-                print ("Successfully created the directory %s " % path)
+         except OSError:
+            print ("Creation of the directory %s failed" % path)
+         else:
+            print ("Successfully created the directory %s " % path)
+            window.Close()
 
-                os.chdir(os.path.join(path, mypro))
+            os.chdir(os.path.join(path, mypro))
 
-                f= open(file,"w+")
- """
-window.Close()
+            f= open(file,"w+")
+            window.Close()
+else:window.Close()
