@@ -1,13 +1,30 @@
 import PySimpleGUI as sg
+import os
 
 
 font = ("Arial", 16)
 newfont = ("Arial", 14)
-layout = [[sg.Text('New Project Name: '),sg.Input(font=font, enable_events=True, key='combo')],
+""" layout = [[sg.Text('New Project Name: '),sg.Input(font=font, enable_events=True, key='combo')],
           [sg.Button('Mac', font=font), sg.Button('Windows', font=font), sg.Button('Linux', font=font), sg.Exit(font=font)]
-          ]
+          ] """
 
-window = sg.Window('New Application Creator', layout, margins=(40, 20))
+#window = sg.Window('New Application Creator', layout, margins=(40, 20))
+
+from sys import platform
+if platform == "linux" or platform == "linux2":
+    layout = [[sg.Text('New Project Name: '),sg.Input(font=font, enable_events=True, key='combo')],
+          [sg.Button('Mac', font=font, visible=False), sg.Button('Windows', font=font, visible=False), sg.Button('Linux', font=font), sg.Exit(font=font)]
+          ]
+    window = sg.Window('New Application Creator', layout, margins=(40, 20))
+elif platform == "darwin":
+    layout = [[sg.Text('New Project Name: '),sg.Input(font=font, enable_events=True, key='combo')],
+          [sg.Button('Mac', font=font), sg.Button('Windows', font=font, visible=False), sg.Button('Linux', font=font, visible=False), sg.Exit(font=font)]
+          ]
+    window = sg.Window('New Application Creator', layout, margins=(40, 20))
+#elif platform == "darwin":
+    # OS X
+#elif platform == "win32":
+    # Windows...
 
 while True:
     event, values = window.Read()
@@ -18,9 +35,43 @@ while True:
      print('You pushed button Mac')
 
     elif event == 'Windows':
-     print('You pushed the Windows button')
+     winproject = values['combo']
+     print('You pushed the Windows button', winproject)
+     window.Close()
 
     elif event == 'Linux':
-     print('You pushed the Linux button')
+     linproject = values['combo']
+     Linux()
+     #print('You pushed the Linux button')
 
-    window.Close()
+
+    def Linux():
+        path = os.getcwd()
+        print ("The current working directory is %s" % path)
+
+        mypro = linproject
+        path = "/home/jack/Programming/"
+        file = "README.md"
+        file2 = 'required.txt'
+        file3 = 'dev.txt'
+
+        check_folder = os.path.isdir(path)
+
+        #if not check_folder:
+
+        try:
+                os.makedirs(os.path.join(path, mypro))
+                os.makedirs(os.path.join(path, mypro, 'required'))
+        # os.makedirs(os.path.join(path, mypro))
+        except OSError:
+                print ("Creation of the directory %s failed" % path)
+        else:
+                print ("Successfully created the directory %s " % path)
+
+                os.chdir(os.path.join(path, mypro))
+                f= open(file,"w+")
+                #Now will add the required foles for the project.
+                os.chdir(os.path.join(path, mypro, 'required'))
+                f = open(file2, "w+")
+                f = open(file3, "w+")
+        window.Close()
