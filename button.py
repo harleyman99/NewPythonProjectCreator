@@ -32,7 +32,8 @@ while True:
         break
 
     if event == 'Mac':
-     print('You pushed button Mac')
+     macproject = values['combo']
+     Mac()
 
     elif event == 'Windows':
      winproject = values['combo']
@@ -74,4 +75,36 @@ while True:
                 os.chdir(os.path.join(path, mypro, 'required'))
                 f = open(file2, "w+")
                 f = open(file3, "w+")
+        window.Close()
+
+    def Mac():
+        path = os.getcwd()
+        print ("The current working directory is %s" % path)
+
+        mypro = macproject   #input("New Project Name:")
+        path = "/users/jack/python_projects/"
+        file = "README.md"
+        file2 = 'required.txt'
+        file3 = 'dev.txt'
+
+        check_folder = os.path.isdir(path)
+
+        #if not check_folder:
+
+        try:
+            os.mkdir(os.path.join(path, mypro))
+            os.makedirs(os.path.join(path, mypro, 'required'))
+        # os.makedirs(os.path.join(path, mypro))
+        except OSError:
+            print ("Creation of the directory %s failed" % path)
+        else:
+            print ("Successfully created the directory %s " % path)
+
+            os.chdir(os.path.join(path, mypro))
+
+            f= open(file,"w+")
+
+            os.chdir(os.path.join(path, mypro, 'required'))
+            f = open(file2, "w+")
+            f = open(file3, "w+")
         window.Close()
