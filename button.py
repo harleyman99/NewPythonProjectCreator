@@ -21,6 +21,12 @@ elif platform == "darwin":
           [sg.Button('Mac', font=font), sg.Button('Windows', font=font, visible=False), sg.Button('Linux', font=font, visible=False), sg.Exit(font=font)]
           ]
     window = sg.Window('New Application Creator', layout, margins=(40, 20))
+#elif platform == "win32"
+#I need to write the Windows line to only show the Windows button.
+
+
+
+
 #elif platform == "darwin":
     # OS X
 #elif platform == "win32":
