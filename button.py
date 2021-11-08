@@ -82,7 +82,7 @@ while True:
         print ("The current working directory is %s" % path)
 
         mypro = macproject   #input("New Project Name:")
-        path = "/users/jack/python_projects/"
+        path = "/users/jackokorn/python_projects/"
         file = "README.md"
         file2 = 'required.txt'
         file3 = 'dev.txt'
