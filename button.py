@@ -21,16 +21,15 @@ elif platform == "darwin":
           [sg.Button('Mac', font=font), sg.Button('Windows', font=font, visible=False), sg.Button('Linux', font=font, visible=False), sg.Exit(font=font)]
           ]
     window = sg.Window('New Application Creator', layout, margins=(40, 20))
-#elif platform == "win32"
+elif platform == "win32":
+    layout = [[sg.Text('New Project Name: '),sg.Input(font=font, enable_events=True, key='combo')],
+          [sg.Button('Mac', font=font, visible=False), sg.Button('Windows', font=font), sg.Button('Linux', font=font, visible=False), sg.Exit(font=font)]
+          ]
 #I need to write the Windows line to only show the Windows button.
 
 
 
 
-#elif platform == "darwin":
-    # OS X
-#elif platform == "win32":
-    # Windows...
 
 while True:
     event, values = window.Read()
@@ -111,6 +110,35 @@ while True:
             f= open(file,"w+")
 
             os.chdir(os.path.join(path, mypro, 'required'))
+            f = open(file2, "w+")
+            f = open(file3, "w+")
+        window.Close()
+
+    def Windows():
+        path = os.getcwd()
+        # print ("The current working directory is %s" % path)
+
+        mypro = winproject #input("New Project Name:")
+        path = "/Programming/"
+        file = "README.md"
+        file2 = 'required.txt'
+        file3 = 'dev.txt'
+
+        check_folder = os.path.isdir(path)
+
+        #if not check_folder:
+
+        try:
+            os.makedirs(os.path.join(path, mypro))
+        # os.makedirs(os.path.join(path, mypro))
+        except OSError:
+            print ("Creation of the directory %s failed" % path)
+        else:
+            print ("Successfully created the directory %s " % path)
+
+            os.chdir(os.path.join(path, mypro))
+
+            f= open(file,"w+")
             f = open(file2, "w+")
             f = open(file3, "w+")
         window.Close()
