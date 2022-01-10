@@ -1,3 +1,8 @@
-today = datetime.date.today()
+from datetime import date
+from datetime import datetime
 
-print(today)
+nowdate = date.today()
+nowtime = datetime.now()
+
+print(nowdate)
+print(nowtime)
