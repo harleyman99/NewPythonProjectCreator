@@ -87,7 +87,7 @@ while True:
         print ("The current working directory is %s" % path)
 
         mypro = macproject   #input("New Project Name:")
-        path = "/users/jackokorn/python_projects/"
+        path = "/users/jack/Programming/"
         file = "README.md"
         file2 = 'required.txt'
         file3 = 'dev.txt'
@@ -106,12 +106,20 @@ while True:
             print ("Successfully created the directory %s " % path)
 
             os.chdir(os.path.join(path, mypro))
+            
+# This is the area of the code that will create the files and open vs code to the correct directory.
 
             f= open(file,"w+")
-
+            
             os.chdir(os.path.join(path, mypro, 'required'))
             f = open(file2, "w+")
-            f = open(file3, "w+")
+            f = open(file3, "w+" )
+            os.chdir(os.path.join(path, mypro))
+            # os.system("git init")
+            # os.system("git add .")
+            # os.system("git commit -m 'Intial commit'")
+            os.system("code .")
+            
         window.Close()
 
     def Windows():
