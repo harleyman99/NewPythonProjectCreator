@@ -76,10 +76,13 @@ while True:
 
                 os.chdir(os.path.join(path, mypro))
                 f= open(file,"w+")
-                #Now will add the required foles for the project.
+                #Now will add the required files for the project.
                 os.chdir(os.path.join(path, mypro, 'required'))
                 f = open(file2, "w+")
                 f = open(file3, "w+")
+                os.chdir(os.path.join(path, mypro))
+                cmd = 'code .'
+                os.system(cmd)
         window.Close()
 
     def Mac():
