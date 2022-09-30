@@ -3,3 +3,6 @@ The code button.py is the current working code for this project. All other code 
 Working on learning to code dates and times.
 When a program is created I want it to create a new GitHub repository.
 
+Next project steps:
+
+Have the new program create a virtual enviroment.

@@ -9,4 +9,8 @@ Add the path of the new project to your GitHib desk top and the files will show 
 
 If you find this program useful please reach out to me and let me know.
 
+Working on an update to have this program aso create the virtual enviorment. 
+
+
+
 
