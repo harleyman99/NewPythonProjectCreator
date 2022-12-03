@@ -4,11 +4,11 @@ import os
 
 font = ("Arial", 16)
 newfont = ("Arial", 14)
-""" layout = [[sg.Text('New Project Name: '),sg.Input(font=font, enable_events=True, key='combo')],
+layout = [[sg.Text('New Project Name: '),sg.Input(font=font, enable_events=True, key='combo')],
           [sg.Button('Mac', font=font), sg.Button('Windows', font=font), sg.Button('Linux', font=font), sg.Exit(font=font)]
-          ] """
+          ]
 
-#window = sg.Window('New Application Creator', layout, margins=(40, 20))
+window = sg.Window('New Application Creator', layout, margins=(40, 20))
 
 from sys import platform
 if platform == "linux" or platform == "linux2":
@@ -42,7 +42,8 @@ while True:
 
     elif event == 'Windows':
      winproject = values['combo']
-     print('You pushed the Windows button', winproject)
+     Windows()
+     #print('You pushed the Windows button', winproject)
      window.Close()
 
     elif event == 'Linux':
@@ -152,4 +153,6 @@ while True:
             f= open(file,"w+")
             f = open(file2, "w+")
             f = open(file3, "w+")
+            os.system("python -m venv venv")
+            os.system("code .")
         window.Close()
